@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <title> OmniLiberal Clicker ALPHA 0.01 </title>
+    
+    <script>
+      var knowledge = 0;
+      var gnomedx = 0;
+      
+      function initialize() {
+        document.getElementById("knowledge").innerHTML = "Current Knowledge: " + knowledge;
+        if ( window.knowledge > 29 && window.gnomedx == 0) {
+          document.getElementById("upgrade").innerHTML = '<h2>AVAILABLE UPGRADES</h2><input type="button" width="100" height="50" value="moderate liberalism" onClick="gnomed();"/>';
+        }
+      }
+      
+      function increase_knowledge() {
+        window.knowledge++; 
+        initialize();
+      }
+      
+      function gnomed() {
+        if (window.gnomedx == 0) {
+          document.getElementById("upgrade").innerHTML = '<iframe width="560" height="315" src="https://www.youtube.com/embed/9iacZrrkGzk?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'; 
+          window.gnomedx = 1;
+        }
+      }
+    </script>
+  </head>
+  <body onload="initialize();">
+    
+    <h3 style="background-color:#ff0000; color:#ffffff; font-weight:bold;"> this game is in very early alpha!!</h3>
+    
+    <h2> Welcome, neoliberal... </h2>
+    <div id="knowledge">
+    </div>
+    
+    <input type="button" value="gain knawledge" onClick="increase_knowledge();"/>
+    <br />
+    <br />
+    <hr>
+    <div id="upgrade">
+      <h2> next upgrade available at 50 knowledge... </h2>
+    </div>
+    
+  </body>
+</html>
